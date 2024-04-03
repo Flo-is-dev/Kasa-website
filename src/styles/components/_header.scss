@@ -1,0 +1,26 @@
+/* ----------------------- */
+/* ---HEADER */
+/* ----------------------- */
+
+.headerContainer {
+  margin: auto;
+  width: 90%;
+  height: 163px;
+  border-radius: clamp(10px, 2vw, 25px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg1 {
+  background: url(../assets/img/dark-bg1.png) center/cover;
+}
+.bg2 {
+  background: url(../assets/img/dark-bg2.png) center/cover;
+}
+
+@media only screen and (max-width: 750px) {
+  .headerContainer h1 {
+    padding-left: 20px;
+  }
+}

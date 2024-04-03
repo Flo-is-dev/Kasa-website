@@ -1,0 +1,73 @@
+/* --------------------------- */
+/* COLLAPSE ------------ */
+/* --------------------------- */
+.collapseBlockContainer {
+  margin-block: 50px;
+}
+.collapse {
+  width: 75%;
+  margin: auto;
+  margin-block: 30px;
+}
+
+.collapse button {
+  padding: 0px 25px;
+  background-color: $main-salmon;
+  color: $main-white;
+  border: none;
+  width: 100%;
+  font-weight: 700;
+  font-size: clamp(13px, 2vw, 24px);
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapse button:hover {
+  cursor: pointer;
+}
+
+.collapse button img {
+  width: 30px;
+  transition: transform 0.3s ease-out;
+}
+
+.collapse button img.open {
+  transform: rotate(180deg);
+}
+
+.content {
+  background-color: $main-bg-gray;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+}
+
+.contentParent {
+  height: 0px;
+  overflow: hidden;
+  transition: height ease-out 0.35s;
+}
+
+.content-show {
+  height: 200px;
+}
+
+.content p {
+  font-size: 18px;
+  text-wrap: pretty;
+}
+
+@media only screen and (max-width: 750px) {
+  .collapseBlockContainer {
+    margin-block: 20px;
+  }
+  .collapse {
+    width: 90%;
+    margin-block: 20px;
+  }
+  .collapse p {
+    font-size: clamp(12px, 2vw, 18px);
+  }
+}

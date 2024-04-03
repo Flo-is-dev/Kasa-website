@@ -1,0 +1,50 @@
+/* ----------------------- */
+/* ---NAVIGATION */
+/* ----------------------- */
+
+.navigation {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
+  margin-bottom: 50px;
+}
+
+.logo img {
+  width: 210px;
+  height: 68px;
+  object-fit: cover;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: min(8vw, 60px);
+  font-weight: 500;
+}
+
+.navigation a {
+  font-size: clamp(12px, 2vw, 20px);
+}
+
+.navigation a.nav-active {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 750px) {
+  .logo img {
+    width: 145px;
+    height: 46px;
+  }
+
+  .navigation {
+    margin-top: 20px;
+    margin-bottom: 27px;
+  }
+  .navigation a {
+    text-transform: uppercase;
+  }
+}
