@@ -1,21 +1,24 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Params, useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Carousel from "../components/Carousel";
 import Information from "../components/Information";
 import Footer from "../components/Footer";
+import {DataAPI} from "../model";
+
 
 const Logement = () => {
   // DATA = objet gloable (20)
   //   !FETCH
-  let data = require("../data/data.json");
+  let data :DataAPI[]= require("../data/data.json");
 
   //   PARAM = id de la âge voulue
-  const { id } = useParams();
+  const { id }:Readonly<Params<string>>  = useParams();
   console.log(id, "====PARAM");
 
+
   //   filteredData = les informations complètes de PARAM
-  const filteredData = data.filter((obj:any) => {
+  const filteredData: DataAPI = data.filter((obj ) => {
     return obj.id === id;
   })[0];
 

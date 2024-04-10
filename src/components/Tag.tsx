@@ -1,6 +1,12 @@
 import React from "react";
 
-const Tag = ({ tags }:any) => {
+interface InterTagProps {
+    tags:  string[]
+}
+
+const Tag = ( {tags} :InterTagProps) => {
+
+    
   return (
     <div className="tagContainer">
       {tags.map((tag:any, index:any) => (

@@ -2,8 +2,14 @@ import React from "react";
 import Collapse from "../components/Collapse";
 import StarScale from "./StarScale";
 import Tag from "./Tag";
+import {DataAPI} from "../model";
 
-const Information = ({ filteredData }:any) => {
+interface IInfoProps {
+    filteredData :  DataAPI
+}
+
+
+const Information = ({ filteredData }:IInfoProps) => {
   return (
     <div className="informationContainer">
       <div className="informationTxtContainer">

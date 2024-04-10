@@ -1,15 +1,23 @@
 import React, { useRef, useState } from "react";
 
-const Collapse = (props:any) => {
-  const [open, setOpen] = useState(false);
+interface InterCollapseProps {
+    children: React.ReactNode; 
+    label: string;
+}
+
+const Collapse = (props :InterCollapseProps ) => {
+    
+  const [open, setOpen] = useState<Boolean>(false);
 
   const toggle = () => {
     setOpen(!open);
   };
 
-  const contentRef = useRef();
+  const contentRef = useRef<HTMLDivElement>(null);
   if (contentRef.current) {
     console.log(contentRef.current.scrollHeight);
+    console.log(contentRef);
+    
   }
 
   return (
@@ -23,7 +31,7 @@ const Collapse = (props:any) => {
         className="contentParent"
         ref={contentRef} 
         style={
-          open
+          (open && contentRef.current)
             ? { height: contentRef.current.scrollHeight + "px" }
             : { height: "0px" }
         }
