@@ -12,7 +12,7 @@ const Error = () => {
           <img src="/img/404.png" alt="" />
         </div>
 
-        <h1> Oups! La page que vous demandez n'existe pas.</h1>
+        <h1> Oups! La page que <br />vous demandez n'existe pas.</h1>
         <NavLink to="/">
           <p>Retourner sur la page d’accueil</p>
         </NavLink>

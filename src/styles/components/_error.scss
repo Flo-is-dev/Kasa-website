@@ -26,6 +26,7 @@
 .errorHeader h1 {
   color: $main-salmon;
   font-size: clamp(18px, 2vw, 36px);
+  text-align: center;
 }
 
 .errorHeader a {

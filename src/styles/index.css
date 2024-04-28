@@ -227,6 +227,7 @@ a:hover {
 @media only screen and (max-width: 750px) {
   .collapseBlockContainer {
     margin-block: 20px;
+    min-height: 40vh;
   }
   .collapse {
     width: 90%;
@@ -263,6 +264,7 @@ a:hover {
 .errorHeader h1 {
   color: #ff6060;
   font-size: clamp(18px, 2vw, 36px);
+  text-align: center;
 }
 
 .errorHeader a {
