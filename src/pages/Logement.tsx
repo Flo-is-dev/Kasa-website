@@ -15,18 +15,22 @@ const Logement = () => {
   const { id }:Readonly<Params<string>>  = useParams();
   const navigate = useNavigate()
     
-  const [dataLogement, setdataLogement] = useState<DataAPI | null>(null);
+// On déclare un état pour stocker les données du logement qu'on initialise sur "null"
+  const [dataLogement, setDataLogement] = useState<DataAPI | null>(null);
 
+  //  useEffect pour effectuer une action lorsque l'ID de l'URL ou la fonction de navigate
   useEffect(() => {
+    // on vérifie si l'id de l'URL fait partie des ID de data
     const selectedLogement = data.find(logement => logement.id === id);
     if (!selectedLogement) {
-      // If logement data is not found, navigate to the custom 404 page
+       //Si l'ID ne se retrouve pas dans "data" alors on est redirigé vers la page error avec remplacement de l'historique avec "replace:true"
       navigate("/error",{ replace: true });
     } else {
-        setdataLogement(selectedLogement);
+        setDataLogement(selectedLogement);
     }
-  }, [id, navigate,data]);
+  }, [id, navigate, data]);
 
+//   Si dataLogement est falsy alors on retourne le composant Error
   if (!dataLogement) {
     return <Error />;
   }
